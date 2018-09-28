@@ -20,7 +20,7 @@ import javax.swing.JLabel;
  *
  * @author lly5031
  */
-public class TestHarness extends JFrame implements ActionListener {
+public class TestHarness extends JFrame {
    
     
     public TestHarness(){
@@ -32,7 +32,8 @@ public class TestHarness extends JFrame implements ActionListener {
     JLabel appName = new JLabel("ATZ HealthCare", JLabel.CENTER);
     
             }
-    public void actionPerformed(ActionEvent e){
-        
+    public void startFlow(){
+        ControllerUsers firstCntl = new ControllerUsers();
+        this.dispose();
     }
 }
