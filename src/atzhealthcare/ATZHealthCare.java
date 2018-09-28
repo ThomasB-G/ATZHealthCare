@@ -16,10 +16,10 @@ public class ATZHealthCare {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String a) {
         // TODO code application logic here
-        TestHarness fm = new TestHarness();
-        fm.setVisible(true);
+        //TestHarness fm = new TestHarness();
+        //fm.setVisible(true);
     }
     
 }

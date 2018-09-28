@@ -8,6 +8,7 @@ package Harness1;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -24,18 +25,26 @@ public class ProjectLayout {
     public JPanel west = new JPanel();
     public JPanel east = new JPanel();
     public JPanel cntr = new JPanel();
+    public JButton login;
     
-    public ProjectLayout(JFrame jf){
+    public ProjectLayout(TestHarness testHarness){
+        login = new JButton("Login Page");
+        login.addActionListener(event -> testHarness.startFlow());
         nrth.setBackground(Color.RED);
         sth.setBackground(Color.BLUE);
         west.setBackground(Color.GREEN);
         east.setBackground(Color.CYAN);
         cntr.setBackground(Color.YELLOW);
+        cntr.add(login);
         
-        jf.add(nrth, BorderLayout.NORTH);
-        jf.add(sth, BorderLayout.SOUTH);
-        jf.add(east, BorderLayout.EAST);
-        jf.add(west, BorderLayout.WEST);
-        jf.add(cntr, BorderLayout.CENTER);
+        testHarness.add(nrth, BorderLayout.NORTH);
+        testHarness.add(sth, BorderLayout.SOUTH);
+        testHarness.add(east, BorderLayout.EAST);
+        testHarness.add(west, BorderLayout.WEST);
+        testHarness.add(cntr, BorderLayout.CENTER);
+        
+        
     }
+
+   
 }
