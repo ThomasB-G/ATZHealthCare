@@ -15,10 +15,23 @@ public class ControllerCom {
     private ModelCom model;
 
     public ControllerCom() {
+        this.inbox = new InboxView(this);
+        this.message = new MessageView(this);
         
+        this.inbox.setVisible(true);
     }
 
-
+    public void toMessageButtonPushed()
+    {
+        this.inbox.dispose();
+        this.message.setVisible(true);
+    }
     
+    public void toRefillButtonPushed()
+    {
+        this.message.dispose();
+        
+        RefillPrescription.ControllerRefill nextController = new RefillPrescription.ControllerRefill();
+    }
     
 }

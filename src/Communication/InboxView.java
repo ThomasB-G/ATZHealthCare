@@ -5,8 +5,8 @@
  */
 package Communication;
 
-import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import javax.swing.*;
 
 /**
@@ -15,33 +15,41 @@ import javax.swing.*;
  */
 public class InboxView extends JFrame {
     private JPanel panel;
+    private ControllerCom cntl;
+    private JPanel nrth;
+    private JPanel sth;
+    private JPanel west;
+    private JPanel east;
+    private JPanel cntr;
+    private JButton toMessage;
 
-    public InboxView(JPanel panel) throws HeadlessException {
-        this.panel = panel;
+    public InboxView(ControllerCom cntl){
+        this.cntl = cntl;
+        this.setTitle("InboxView");
+        
+        nrth = new JPanel();
+        sth = new JPanel();
+        west = new JPanel();
+        east = new JPanel();
+        cntr = new JPanel();
+        
+        toMessage = new JButton("To Communication");
+        toMessage.addActionListener(event -> cntl.toMessageButtonPushed());
+        nrth.setBackground(Color.RED);
+        sth.setBackground(Color.BLUE);
+        west.setBackground(Color.GREEN);
+        east.setBackground(Color.CYAN);
+        cntr.setBackground(Color.YELLOW);
+        cntr.add(toMessage);
+        
+        this.add(nrth, BorderLayout.NORTH);
+        this.add(sth, BorderLayout.SOUTH);
+        this.add(east, BorderLayout.EAST);
+        this.add(west, BorderLayout.WEST);
+        this.add(cntr, BorderLayout.CENTER);
+        this.setSize(400,300);
     }
 
-    public InboxView(JPanel panel, GraphicsConfiguration gc) {
-        super(gc);
-        this.panel = panel;
-    }
-
-    public InboxView(JPanel panel, String title) throws HeadlessException {
-        super(title);
-        this.panel = panel;
-    }
-
-    public InboxView(JPanel panel, String title, GraphicsConfiguration gc) {
-        super(title, gc);
-        this.panel = panel;
-    }
-
-    public JPanel getPanel() {
-        return panel;
-    }
-
-    public void setPanel(JPanel panel) {
-        this.panel = panel;
-    }
     
     
 }

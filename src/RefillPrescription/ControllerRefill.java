@@ -15,43 +15,8 @@ public class ControllerRefill {
     private DoctorView doctorView;
     private ModelRefill model;
 
-    public ControllerRefill(PatientView patientView, PharmacistView pharmacistView, DoctorView doctorView, ModelRefill model) {
-        this.patientView = patientView;
-        this.pharmacistView = pharmacistView;
-        this.doctorView = doctorView;
-        this.model = model;
-    }
+    public ControllerRefill() {
 
-    public PatientView getPatientView() {
-        return patientView;
-    }
-
-    public void setPatientView(PatientView patientView) {
-        this.patientView = patientView;
-    }
-
-    public PharmacistView getPharmacistView() {
-        return pharmacistView;
-    }
-
-    public void setPharmacistView(PharmacistView pharmacistView) {
-        this.pharmacistView = pharmacistView;
-    }
-
-    public DoctorView getDoctorView() {
-        return doctorView;
-    }
-
-    public void setDoctorView(DoctorView doctorView) {
-        this.doctorView = doctorView;
-    }
-
-    public ModelRefill getModel() {
-        return model;
-    }
-
-    public void setModel(ModelRefill model) {
-        this.model = model;
     }
     
     
