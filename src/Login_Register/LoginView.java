@@ -5,6 +5,9 @@
  */
 package Login_Register;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
 import javax.swing.*;
@@ -17,28 +20,38 @@ public class LoginView extends JFrame {
     private JPanel panel;
     private ControllerUsers cntl;
 
+    private JPanel nrth;
+    private JPanel sth;
+    private JPanel west;
+    private JPanel east;
+    private JPanel cntr;
+    private JButton toRegister;
+
     public LoginView(ControllerUsers cntl){
         this.cntl = cntl;
-    }
-
-    public LoginView(GraphicsConfiguration gc) {
-        super(gc);
-    }
-
-    public LoginView(String title) throws HeadlessException {
-        super(title);
-    }
-
-    public LoginView(String title, GraphicsConfiguration gc) {
-        super(title, gc);
-    }
-
-    public JPanel getPanel() {
-        return panel;
-    }
-
-    public void setPanel(JPanel panel) {
-        this.panel = panel;
+        this.setTitle("LoginView");
+        
+        nrth = new JPanel();
+        sth = new JPanel();
+        west = new JPanel();
+        east = new JPanel();
+        cntr = new JPanel();
+        
+        toRegister = new JButton("To Register");
+        toRegister.addActionListener(event -> cntl.toRegisterButtonPushed());
+        nrth.setBackground(Color.RED);
+        sth.setBackground(Color.BLUE);
+        west.setBackground(Color.GREEN);
+        east.setBackground(Color.CYAN);
+        cntr.setBackground(Color.YELLOW);
+        cntr.add(toRegister);
+        
+        this.add(nrth, BorderLayout.NORTH);
+        this.add(sth, BorderLayout.SOUTH);
+        this.add(east, BorderLayout.EAST);
+        this.add(west, BorderLayout.WEST);
+        this.add(cntr, BorderLayout.CENTER);
+        this.setSize(400,300);
     }
     
     

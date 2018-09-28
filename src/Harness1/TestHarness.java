@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import HealthcarePolicy.*;
-import Login_Register.*;
+import Login_Register.ControllerUsers;
 import Documents.*;
 import Communication.*;
 import RefillPrescription.*;

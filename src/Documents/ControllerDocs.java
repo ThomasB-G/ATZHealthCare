@@ -13,9 +13,8 @@ public class ControllerDocs {
     private DocumentsView view;
     private ModelDocs model;
 
-    public ControllerDocs(DocumentsView view, ModelDocs model) {
-        this.view = view;
-        this.model = model;
+    public ControllerDocs() {
+        
     }
 
     public DocumentsView getView() {

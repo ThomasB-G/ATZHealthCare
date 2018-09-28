@@ -18,33 +18,21 @@ public class ControllerUsers {
         this.loginView = new LoginView(this);
         this.registerView = new RegisterView(this);
         this.model = new ModelUsers(this);
-    }
-
-    public LoginView getLoginView() {
-        return loginView;
-    }
-
-    public void setLoginView(LoginView loginView) {
-        this.loginView = loginView;
-    }
-
-    public RegisterView getRegisterView() {
-        return registerView;
-    }
-
-    public void setRegisterView(RegisterView registerView) {
-        this.registerView = registerView;
-    }
-
-    public ModelUsers getModel() {
-        return model;
-    }
-
-    public void setModel(ModelUsers model) {
-        this.model = model;
+        this.loginView.setVisible(true);
     }
     
+    public void toRegisterButtonPushed()
+    {
+        this.loginView.dispose();
+        this.registerView.setVisible(true);
+    }
     
+    public void toDocumentButtonPushed()
+    {
+        this.registerView.dispose();
+        
+        Documents.ControllerDocs nextCntl = new Documents.ControllerDocs();
+    }
     
     
 }
