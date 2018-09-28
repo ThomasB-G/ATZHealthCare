@@ -5,6 +5,9 @@
  */
 package Documents;
 
+import Login_Register.ControllerUsers;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
 import javax.swing.*;
@@ -15,33 +18,44 @@ import javax.swing.*;
  */
 public class DocumentsView extends JFrame {
     private JPanel panel;
+    
+    private ControllerDocs cntl;
 
-    public DocumentsView(JPanel panel) throws HeadlessException {
-        this.panel = panel;
+    private JPanel nrth;
+    private JPanel sth;
+    private JPanel west;
+    private JPanel east;
+    private JPanel cntr;
+    private JButton toCommunication;
+
+    public DocumentsView(ControllerDocs cntl){
+        this.cntl = cntl;
+        
+        this.setTitle("DocumentsView");
+        
+        nrth = new JPanel();
+        sth = new JPanel();
+        west = new JPanel();
+        east = new JPanel();
+        cntr = new JPanel();
+        
+        toCommunication = new JButton("To Communication");
+        toCommunication.addActionListener(event -> cntl.toCommunicationButtonPressed());
+        nrth.setBackground(Color.RED);
+        sth.setBackground(Color.BLUE);
+        west.setBackground(Color.GREEN);
+        east.setBackground(Color.CYAN);
+        cntr.setBackground(Color.YELLOW);
+        cntr.add(toCommunication);
+        
+        this.add(nrth, BorderLayout.NORTH);
+        this.add(sth, BorderLayout.SOUTH);
+        this.add(east, BorderLayout.EAST);
+        this.add(west, BorderLayout.WEST);
+        this.add(cntr, BorderLayout.CENTER);
+        this.setSize(400,300);
     }
 
-    public DocumentsView(JPanel panel, GraphicsConfiguration gc) {
-        super(gc);
-        this.panel = panel;
-    }
-
-    public DocumentsView(JPanel panel, String title) throws HeadlessException {
-        super(title);
-        this.panel = panel;
-    }
-
-    public DocumentsView(JPanel panel, String title, GraphicsConfiguration gc) {
-        super(title, gc);
-        this.panel = panel;
-    }
-
-    public JPanel getPanel() {
-        return panel;
-    }
-
-    public void setPanel(JPanel panel) {
-        this.panel = panel;
-    }
     
     
 }

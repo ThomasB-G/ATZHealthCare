@@ -14,24 +14,14 @@ public class ControllerDocs {
     private ModelDocs model;
 
     public ControllerDocs() {
+        this.view = new DocumentsView(this);
+        this.view.setVisible(true);
+    }
+    
+    public void toCommunicationButtonPressed()
+    {
+        this.view.dispose();
         
+        Communication.ControllerCom nextCntl  = new Communication.ControllerCom();
     }
-
-    public DocumentsView getView() {
-        return view;
-    }
-
-    public void setView(DocumentsView view) {
-        this.view = view;
-    }
-
-    public ModelDocs getModel() {
-        return model;
-    }
-
-    public void setModel(ModelDocs model) {
-        this.model = model;
-    }
-    
-    
 }

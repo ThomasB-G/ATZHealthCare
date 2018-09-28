@@ -14,35 +14,11 @@ public class ControllerCom {
     private MessageView message;
     private ModelCom model;
 
-    public ControllerCom(InboxView inbox, MessageView message, ModelCom model) {
-        this.inbox = inbox;
-        this.message = message;
-        this.model = model;
+    public ControllerCom() {
+        
     }
 
-    public InboxView getInbox() {
-        return inbox;
-    }
 
-    public void setInbox(InboxView inbox) {
-        this.inbox = inbox;
-    }
-
-    public MessageView getMessage() {
-        return message;
-    }
-
-    public void setMessage(MessageView message) {
-        this.message = message;
-    }
-
-    public ModelCom getModel() {
-        return model;
-    }
-
-    public void setModel(ModelCom model) {
-        this.model = model;
-    }
     
     
 }
