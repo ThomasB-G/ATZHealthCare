@@ -33,7 +33,7 @@ public class InboxView extends JFrame {
         east = new JPanel();
         cntr = new JPanel();
         
-        toMessage = new JButton("To Communication");
+        toMessage = new JButton("To MessageView");
         toMessage.addActionListener(event -> cntl.toMessageButtonPushed());
         nrth.setBackground(Color.RED);
         sth.setBackground(Color.BLUE);
