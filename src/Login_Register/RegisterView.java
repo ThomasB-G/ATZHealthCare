@@ -15,9 +15,10 @@ import javax.swing.*;
  */
 public class RegisterView extends JFrame {
     private JPanel panel;
+    private ControllerUsers cntl;
 
-    public RegisterView(JPanel panel) throws HeadlessException {
-        this.panel = panel;
+    public RegisterView(ControllerUsers cntl){
+        this.cntl = cntl;
     }
 
     public RegisterView(JPanel panel, GraphicsConfiguration gc) {

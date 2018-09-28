@@ -14,9 +14,11 @@ import java.io.*;
  */
 public class ModelUsers {
     private LinkedList<User> users;
+    private ControllerUsers cntl;
 
-    public ModelUsers() {
+    public ModelUsers(ControllerUsers cntl) {
         users = new LinkedList<>();
+        this.cntl = cntl;
     }
 
     public LinkedList<User> getUsers() {

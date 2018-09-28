@@ -14,10 +14,10 @@ public class ControllerUsers {
     private RegisterView registerView;
     private ModelUsers model;
 
-    public ControllerUsers(LoginView loginView, RegisterView registerView, ModelUsers model) {
-        this.loginView = loginView;
-        this.registerView = registerView;
-        this.model = model;
+    public ControllerUsers() {
+        this.loginView = new LoginView(this);
+        this.registerView = new RegisterView(this);
+        this.model = new ModelUsers(this);
     }
 
     public LoginView getLoginView() {

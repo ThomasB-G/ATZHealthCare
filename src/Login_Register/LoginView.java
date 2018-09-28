@@ -15,8 +15,10 @@ import javax.swing.*;
  */
 public class LoginView extends JFrame {
     private JPanel panel;
+    private ControllerUsers cntl;
 
-    public LoginView() throws HeadlessException {
+    public LoginView(ControllerUsers cntl){
+        this.cntl = cntl;
     }
 
     public LoginView(GraphicsConfiguration gc) {
