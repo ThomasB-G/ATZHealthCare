@@ -5,9 +5,7 @@
  */
 package Login_Register;
 
-import java.sql.*;
 import java.util.*;
-import java.util.logging.*;
 import java.io.*;
 
 /**
