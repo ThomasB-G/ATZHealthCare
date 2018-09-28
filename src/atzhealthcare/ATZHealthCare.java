@@ -5,6 +5,8 @@
  */
 package atzhealthcare;
 
+import Harness1.TestHarness;
+
 /**
  *
  * @author russell
@@ -16,6 +18,8 @@ public class ATZHealthCare {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        TestHarness fm = new TestHarness();
+        fm.setVisible(true);
     }
     
 }
