@@ -6,26 +6,30 @@
 package RefillPrescription;
 
 import java.util.*;
-import java.io.*;
 
 /**
  *
  * @author russell
  */
 public class ModelRefill {
-    private LinkedList<Prescription> prescriptions;
+    private LinkedList<Prescription> prescriptionList;
+    private Prescription prescription;
 
     public ModelRefill(LinkedList<Prescription> prescriptions) {
-        this.prescriptions = prescriptions;
+        this.prescriptionList = prescriptionList;
     }
 
     public LinkedList<Prescription> getPrescriptions() {
-        return prescriptions;
+        return prescriptionList;
     }
 
     public void setPrescriptions(LinkedList<Prescription> prescriptions) {
-        this.prescriptions = prescriptions;
+        this.prescriptionList = prescriptionList;
     }
     
+    public void addPrescription(Prescription prescription){
+        this.prescription=prescription;
+        this.prescriptionList.add(this.prescription);
+    }
     
 }

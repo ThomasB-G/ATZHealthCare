@@ -5,6 +5,8 @@
  */
 package RefillPrescription;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author russell
@@ -42,6 +44,12 @@ public class ControllerRefill {
         UpdateCenterStatus.ControllerCenter nextCntl = new UpdateCenterStatus.ControllerCenter();
     }
 
+    public void addPrescription(Prescription prescription){
+        this.model.addPrescription(prescription);
+    }
     
+    public LinkedList<Prescription> getPrescriptions(){
+        return this.model.getPrescriptions();
+    }
     
 }
