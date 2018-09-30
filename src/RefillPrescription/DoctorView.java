@@ -5,8 +5,8 @@
  */
 package RefillPrescription;
 
-import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import javax.swing.*;
 
 /**
@@ -16,31 +16,40 @@ import javax.swing.*;
 public class DoctorView extends JFrame {
     private JPanel panel;
 
-    public DoctorView(JPanel panel) throws HeadlessException {
-        this.panel = panel;
-    }
+    private ControllerRefill cntl;
 
-    public DoctorView(JPanel panel, GraphicsConfiguration gc) {
-        super(gc);
-        this.panel = panel;
-    }
+    private JPanel nrth;
+    private JPanel sth;
+    private JPanel west;
+    private JPanel east;
+    private JPanel cntr;
+    private JButton toUpdateCenterStatus;
 
-    public DoctorView(JPanel panel, String title) throws HeadlessException {
-        super(title);
-        this.panel = panel;
-    }
-
-    public DoctorView(JPanel panel, String title, GraphicsConfiguration gc) {
-        super(title, gc);
-        this.panel = panel;
-    }
-
-    public JPanel getPanel() {
-        return panel;
-    }
-
-    public void setPanel(JPanel panel) {
-        this.panel = panel;
+    public DoctorView(ControllerRefill cntl){
+        this.cntl = cntl;
+        this.setTitle("DoctorView");
+        
+        nrth = new JPanel();
+        sth = new JPanel();
+        west = new JPanel();
+        east = new JPanel();
+        cntr = new JPanel();
+        
+        toUpdateCenterStatus = new JButton("To UpdateCenterStatus");
+        toUpdateCenterStatus.addActionListener(event -> cntl.toCenterStatusButtonPushed());
+        nrth.setBackground(Color.RED);
+        sth.setBackground(Color.BLUE);
+        west.setBackground(Color.GREEN);
+        east.setBackground(Color.CYAN);
+        cntr.setBackground(Color.YELLOW);
+        cntr.add(toUpdateCenterStatus);
+        
+        this.add(nrth, BorderLayout.NORTH);
+        this.add(sth, BorderLayout.SOUTH);
+        this.add(east, BorderLayout.EAST);
+        this.add(west, BorderLayout.WEST);
+        this.add(cntr, BorderLayout.CENTER);
+        this.setSize(400,300);
     }
     
     

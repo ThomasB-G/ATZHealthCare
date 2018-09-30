@@ -13,25 +13,8 @@ public class ControllerCenter {
     private ModelCenter model;
     private StatusView view;
 
-    public ControllerCenter(ModelCenter model, StatusView view) {
-        this.model = model;
-        this.view = view;
-    }
-
-    public ModelCenter getModel() {
-        return model;
-    }
-
-    public void setModel(ModelCenter model) {
-        this.model = model;
-    }
-
-    public StatusView getView() {
-        return view;
-    }
-
-    public void setView(StatusView view) {
-        this.view = view;
+    public ControllerCenter(){
+        
     }
     
     

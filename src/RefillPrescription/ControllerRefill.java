@@ -16,8 +16,32 @@ public class ControllerRefill {
     private ModelRefill model;
 
     public ControllerRefill() {
-
+        this.patientView = new PatientView(this);
+        this.pharmacistView = new PharmacistView(this);
+        this.doctorView = new DoctorView(this);
+        
+        this.patientView.setVisible(true);
     }
+    
+    public void toPharmacistButtonPushed()
+    {
+        this.patientView.dispose();
+        this.pharmacistView.setVisible(true);
+    }
+    
+    public void toDoctorButtonPushed()
+    {
+        this.pharmacistView.dispose();
+        this.doctorView.setVisible(true);
+    }
+
+    public void toCenterStatusButtonPushed()
+    {
+        this.doctorView.dispose();
+        
+        UpdateCenterStatus.ControllerCenter nextCntl = new UpdateCenterStatus.ControllerCenter();
+    }
+
     
     
 }
