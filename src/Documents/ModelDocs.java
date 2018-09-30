@@ -15,16 +15,17 @@ import java.io.*;
 public class ModelDocs {
     private LinkedList<Document> documents;
 
-    public ModelDocs(LinkedList<Document> documents) {
-        this.documents = documents;
+    public ModelDocs() {
+        this.documents = new LinkedList<>();
     }
 
     public LinkedList<Document> getDocuments() {
         return documents;
     }
 
-    public void setDocuments(LinkedList<Document> documents) {
-        this.documents = documents;
+    public void addDocument(Document document)
+    {
+        this.documents.add(document);
     }
     
     
