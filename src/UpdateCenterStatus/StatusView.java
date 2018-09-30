@@ -5,8 +5,8 @@
  */
 package UpdateCenterStatus;
 
-import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import javax.swing.*;
 
 /**
@@ -15,32 +15,41 @@ import javax.swing.*;
  */
 public class StatusView extends JFrame {
     private JPanel panel;
+    
+    private ControllerCenter cntl;
 
-    public StatusView(JPanel panel) throws HeadlessException {
-        this.panel = panel;
-    }
+    private JPanel nrth;
+    private JPanel sth;
+    private JPanel west;
+    private JPanel east;
+    private JPanel cntr;
+    private JButton toPolicy;
 
-    public StatusView(JPanel panel, GraphicsConfiguration gc) {
-        super(gc);
-        this.panel = panel;
-    }
-
-    public StatusView(JPanel panel, String title) throws HeadlessException {
-        super(title);
-        this.panel = panel;
-    }
-
-    public StatusView(JPanel panel, String title, GraphicsConfiguration gc) {
-        super(title, gc);
-        this.panel = panel;
-    }
-
-    public JPanel getPanel() {
-        return panel;
-    }
-
-    public void setPanel(JPanel panel) {
-        this.panel = panel;
+    public StatusView(ControllerCenter cntl){
+    this.cntl = cntl;
+        this.setTitle("Status View");
+        
+        nrth = new JPanel();
+        sth = new JPanel();
+        west = new JPanel();
+        east = new JPanel();
+        cntr = new JPanel();
+        
+        toPolicy = new JButton("To Policy");
+        toPolicy.addActionListener(event -> cntl.toPolicyButtonPressed());
+        nrth.setBackground(Color.RED);
+        sth.setBackground(Color.BLUE);
+        west.setBackground(Color.GREEN);
+        east.setBackground(Color.CYAN);
+        cntr.setBackground(Color.YELLOW);
+        cntr.add(toPolicy);
+        
+        this.add(nrth, BorderLayout.NORTH);
+        this.add(sth, BorderLayout.SOUTH);
+        this.add(east, BorderLayout.EAST);
+        this.add(west, BorderLayout.WEST);
+        this.add(cntr, BorderLayout.CENTER);
+        this.setSize(400,300);
     }
     
     

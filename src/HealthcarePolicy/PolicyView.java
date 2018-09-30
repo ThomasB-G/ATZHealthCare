@@ -5,11 +5,8 @@
  */
 package HealthcarePolicy;
 
-import UpdateCenterStatus.ControllerCenter;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
 import javax.swing.*;
 
 /**
@@ -26,7 +23,7 @@ public class PolicyView extends JFrame {
     private JPanel west;
     private JPanel east;
     private JPanel cntr;
-    private JButton toStatus;
+    private JButton toExit;
     
     public PolicyView(ControllerPolicy cntl){
     this.cntl = cntl;
@@ -38,14 +35,14 @@ public class PolicyView extends JFrame {
         east = new JPanel();
         cntr = new JPanel();
         
-        toStatus = new JButton("Log Out");
-        toStatus.addActionListener(event -> cntl.toPolicyButtonPushed());
+        toExit = new JButton("Log Out");
+        toExit.addActionListener(event -> cntl.toExitButtonPushed());
         nrth.setBackground(Color.RED);
         sth.setBackground(Color.BLUE);
         west.setBackground(Color.GREEN);
         east.setBackground(Color.CYAN);
         cntr.setBackground(Color.YELLOW);
-        cntr.add(toStatus);
+        cntr.add(toExit);
         
         this.add(nrth, BorderLayout.NORTH);
         this.add(sth, BorderLayout.SOUTH);

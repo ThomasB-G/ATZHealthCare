@@ -11,27 +11,17 @@ package HealthcarePolicy;
  */
 public class ControllerPolicy {
     private ModelPolicy model;
-    private PolicyView view;
+    private PolicyView policyView;
 
-    public ControllerPolicy(ModelPolicy model, PolicyView view) {
-        this.model = model;
-        this.view = view;
+    public ControllerPolicy() {
+        this.policyView = new PolicyView(this);
+        
+        
+        this.policyView.setVisible(true);
     }
-
-    public ModelPolicy getModel() {
-        return model;
-    }
-
-    public void setModel(ModelPolicy model) {
-        this.model = model;
-    }
-
-    public PolicyView getView() {
-        return view;
-    }
-
-    public void setView(PolicyView view) {
-        this.view = view;
+    
+    public void toExitButtonPushed(){
+        this.policyView.dispose();
     }
     
 }
