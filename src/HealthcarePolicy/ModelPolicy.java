@@ -14,6 +14,7 @@ import java.io.*;
  */
 public class ModelPolicy {
     private LinkedList<Policy> policies;
+    private Policy newPolicy;
 
     public ModelPolicy(LinkedList<Policy> policies) {
         this.policies = policies;
@@ -26,6 +27,16 @@ public class ModelPolicy {
     public void setPolicies(LinkedList<Policy> policies) {
         this.policies = policies;
     }
-    
+    public Policy getNewPolicy() {
+        return newPolicy;
+    }
+
+    public void setNewPolicy(Policy newPolicy) {
+        this.newPolicy = newPolicy;
+    }
+    public void addPolicy(Policy newPolicy){
+        this.newPolicy = newPolicy;
+        this.policies.add(this.newPolicy);
+    }
     
 }
