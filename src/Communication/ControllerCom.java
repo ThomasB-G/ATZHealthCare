@@ -5,6 +5,8 @@
  */
 package Communication;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author russell
@@ -32,6 +34,16 @@ public class ControllerCom {
         this.message.dispose();
         
         RefillPrescription.ControllerRefill nextController = new RefillPrescription.ControllerRefill();
+    }
+    
+    public void addMessage(Email newMessage)
+    {
+        this.model.addMessage(newMessage);
+    }
+    
+    public LinkedList<Email> getMessages()
+    {
+        return this.model.getCommunication();
     }
     
 }

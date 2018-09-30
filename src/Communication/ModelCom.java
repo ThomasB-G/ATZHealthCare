@@ -37,5 +37,11 @@ public class ModelCom {
         this.newMessage = newMessage;
     }
     
+    public void addMessage(Email newMessage)
+    {
+        this.newMessage = newMessage; //this is so that our newMessage variable is still the newest message
+        this.communication.add(this.newMessage);
+    }
+    
     
 }

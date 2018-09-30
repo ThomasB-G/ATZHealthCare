@@ -5,6 +5,8 @@
  */
 package Documents;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author russell
@@ -23,5 +25,16 @@ public class ControllerDocs {
         this.view.dispose();
         
         Communication.ControllerCom nextCntl  = new Communication.ControllerCom();
+    }
+    
+    public void addDocument(Document document)
+    {
+        this.model.addDocument(document);
+        
+    }
+    
+    public LinkedList<Document> getDocuments()
+    {
+        return this.model.getDocuments();
     }
 }

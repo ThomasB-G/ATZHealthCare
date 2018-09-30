@@ -14,8 +14,8 @@ public class Document {
     private File file;
     private String title;
 
-    public Document(File file, String title) {
-        this.file = file;
+    public Document(String title) {
+        
         this.title = title;
     }
 
