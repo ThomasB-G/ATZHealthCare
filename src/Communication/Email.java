@@ -20,6 +20,10 @@ public class Email {
         this.recipients = recipients;
         this.body = body;
     }
+    public Email(String subject)
+    {
+        this.subject = subject;
+    }//here Ill use this easier constructor just so that I know the add method works
 
     public String getSubject() {
         return subject;
