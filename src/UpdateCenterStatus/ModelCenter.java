@@ -26,6 +26,9 @@ public class ModelCenter {
     public void setStatuses(LinkedList<Status> statuses) {
         this.statuses = statuses;
     }
+    public void addStatus(Status status) {
+        this.statuses.add(status);
+    }
     
     
 }

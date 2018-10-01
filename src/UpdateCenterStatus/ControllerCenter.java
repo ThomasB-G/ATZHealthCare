@@ -5,6 +5,8 @@
  */
 package UpdateCenterStatus;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author russell
@@ -25,6 +27,16 @@ public class ControllerCenter {
         
         HealthcarePolicy.ControllerPolicy nextCntl = new HealthcarePolicy.ControllerPolicy();
     }
-    
+    public LinkedList<Status> getStatuses(){
+        
+        return model.getStatuses();
+    }
+        public void setStatuses(LinkedList<Status> statuses) {
+        model.setStatuses(statuses);
+    }
+      public void addStatus(Status status) {
+        model.addStatus(status);
+    }
+        
     
 }
