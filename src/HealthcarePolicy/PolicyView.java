@@ -35,7 +35,7 @@ public class PolicyView extends JFrame {
         east = new JPanel();
         cntr = new JPanel();
         
-        toExit = new JButton("Log Out");
+        toExit = new JButton("Leave Application");
         toExit.addActionListener(event -> cntl.toExitButtonPushed());
         nrth.setBackground(Color.RED);
         sth.setBackground(Color.BLUE);
