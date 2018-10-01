@@ -17,6 +17,9 @@ public class Status {
         this.status = status;
         this.statusLvl = statusLvl;
     }
+    public Status(String status) {
+        this.status = status;
+    }
 
     public String getStatus() {
         return status;

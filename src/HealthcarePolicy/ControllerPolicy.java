@@ -5,6 +5,11 @@
  */
 package HealthcarePolicy;
 
+import java.util.*;
+
+
+
+
 /**
  *
  * @author russell
@@ -24,4 +29,12 @@ public class ControllerPolicy {
         this.policyView.dispose();
     }
     
+    public void addPolicy(Policy newPolicy){
+        this.model.addPolicy(newPolicy);
+    }
+    
+    public LinkedList<Policy> getPolicies()
+    {
+        return this.model.getPolicies();
+    }
 }
