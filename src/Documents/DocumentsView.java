@@ -5,11 +5,8 @@
  */
 package Documents;
 
-import Login_Register.ControllerUsers;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
 import javax.swing.*;
 
 /**
@@ -41,11 +38,11 @@ public class DocumentsView extends JFrame {
         
         toCommunication = new JButton("To Communication");
         toCommunication.addActionListener(event -> cntl.toCommunicationButtonPressed());
-        nrth.setBackground(Color.RED);
+        nrth.setBackground(Color.BLUE);
         sth.setBackground(Color.BLUE);
-        west.setBackground(Color.GREEN);
-        east.setBackground(Color.CYAN);
-        cntr.setBackground(Color.YELLOW);
+        west.setBackground(Color.BLUE);
+        east.setBackground(Color.BLUE);
+        cntr.setBackground(Color.WHITE);
         cntr.add(toCommunication);
         
         this.add(nrth, BorderLayout.NORTH);

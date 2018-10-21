@@ -7,9 +7,7 @@ package Login_Register;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Font;
-import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
+import java.awt.GridLayout;
 import javax.swing.*;
 
 /**
@@ -26,24 +24,35 @@ public class LoginView extends JFrame {
     private JPanel east;
     private JPanel cntr;
     private JButton toRegister;
+    private JLabel userNameLabel;
+    private JTextField userName = new JTextField(15);
+    private JLabel passWordLabel;
+    private JTextField passWord = new JTextField(15);
 
     public LoginView(ControllerUsers cntl){
         this.cntl = cntl;
-        this.setTitle("LoginView");
+        this.setTitle("Login");
         
         nrth = new JPanel();
         sth = new JPanel();
         west = new JPanel();
         east = new JPanel();
-        cntr = new JPanel();
+        cntr = new JPanel(new GridLayout(5, 1));
         
-        toRegister = new JButton("To Register");
-        toRegister.addActionListener(event -> cntl.toRegisterButtonPushed());
-        nrth.setBackground(Color.RED);
+        userNameLabel = new JLabel("Username:");
+        passWordLabel = new JLabel("Password:");
+        
+        toRegister = new JButton("Login");
+        toRegister.addActionListener(event -> cntl.toDocumentButtonPushed());
+        nrth.setBackground(Color.BLUE);
         sth.setBackground(Color.BLUE);
-        west.setBackground(Color.GREEN);
-        east.setBackground(Color.CYAN);
-        cntr.setBackground(Color.YELLOW);
+        west.setBackground(Color.BLUE);
+        east.setBackground(Color.BLUE);
+        cntr.setBackground(Color.WHITE);
+        cntr.add(userNameLabel);
+        cntr.add(userName);
+        cntr.add(passWordLabel);
+        cntr.add(passWord);
         cntr.add(toRegister);
         
         this.add(nrth, BorderLayout.NORTH);

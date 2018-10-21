@@ -35,11 +35,11 @@ public class InboxView extends JFrame {
         
         toMessage = new JButton("To MessageView");
         toMessage.addActionListener(event -> cntl.toMessageButtonPushed());
-        nrth.setBackground(Color.RED);
+        nrth.setBackground(Color.BLUE);
         sth.setBackground(Color.BLUE);
-        west.setBackground(Color.GREEN);
-        east.setBackground(Color.CYAN);
-        cntr.setBackground(Color.YELLOW);
+        west.setBackground(Color.BLUE);
+        east.setBackground(Color.BLUE);
+        cntr.setBackground(Color.WHITE);
         cntr.add(toMessage);
         
         this.add(nrth, BorderLayout.NORTH);

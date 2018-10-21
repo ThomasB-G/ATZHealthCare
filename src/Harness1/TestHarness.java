@@ -5,15 +5,8 @@
  */
 package Harness1;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JFrame;
-import HealthcarePolicy.*;
 import Login_Register.ControllerUsers;
-import Documents.*;
-import Communication.*;
-import RefillPrescription.*;
-import UpdateCenterStatus.*;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 /**
@@ -35,5 +28,11 @@ public class TestHarness extends JFrame {
     public void startFlow(){
         ControllerUsers firstCntl = new ControllerUsers();
         this.dispose();
+    }
+    
+    public void register(){
+        ControllerUsers firstCntl = new ControllerUsers();
+        this.dispose();
+        firstCntl.toRegisterButtonPushed();
     }
 }

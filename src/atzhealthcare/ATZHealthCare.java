@@ -5,7 +5,9 @@
  */
 package atzhealthcare;
 
-import Harness1.TestHarness;
+import Login_Register.ControllerUsers;
+import Login_Register.HomePage;
+
 
 /**
  *
@@ -16,10 +18,11 @@ public class ATZHealthCare {
     /**
      * @param args the command line arguments
      */
-    public static void main(String a) {
+    public static void main(String[] args) {
         // TODO code application logic here
-        //TestHarness fm = new TestHarness();
-        //fm.setVisible(true);
+        ControllerUsers cntl = new ControllerUsers();
+        HomePage fm = new HomePage(cntl);
+        fm.setVisible(true);
     }
     
 }

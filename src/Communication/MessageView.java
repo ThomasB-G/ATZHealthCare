@@ -7,8 +7,6 @@ package Communication;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
 import javax.swing.*;
 
 /**
@@ -37,11 +35,11 @@ public class MessageView extends JFrame {
         
         toRefill = new JButton("To Refill");
         toRefill.addActionListener(event -> cntl.toRefillButtonPushed());
-        nrth.setBackground(Color.RED);
+        nrth.setBackground(Color.BLUE);
         sth.setBackground(Color.BLUE);
-        west.setBackground(Color.GREEN);
-        east.setBackground(Color.CYAN);
-        cntr.setBackground(Color.YELLOW);
+        west.setBackground(Color.BLUE);
+        east.setBackground(Color.BLUE);
+        cntr.setBackground(Color.WHITE);
         cntr.add(toRefill);
         
         this.add(nrth, BorderLayout.NORTH);

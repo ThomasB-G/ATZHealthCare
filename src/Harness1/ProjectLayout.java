@@ -9,7 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -25,17 +25,23 @@ public class ProjectLayout {
     public JPanel west = new JPanel();
     public JPanel east = new JPanel();
     public JPanel cntr = new JPanel();
+    public JLabel welcome = new JLabel("Welcome! Please login or register for a new account.");
     public JButton login;
+    public JButton register;
     
     public ProjectLayout(TestHarness testHarness){
-        login = new JButton("Login Page");
+        login = new JButton("Login");
+        register = new JButton("Register");
         login.addActionListener(event -> testHarness.startFlow());
-        nrth.setBackground(Color.RED);
+        register.addActionListener(event -> testHarness.register());
+        nrth.setBackground(Color.BLUE);
         sth.setBackground(Color.BLUE);
-        west.setBackground(Color.GREEN);
-        east.setBackground(Color.CYAN);
-        cntr.setBackground(Color.YELLOW);
+        west.setBackground(Color.BLUE);
+        east.setBackground(Color.BLUE);
+        cntr.setBackground(Color.WHITE);
+        cntr.add(welcome);
         cntr.add(login);
+        cntr.add(register);
         
         testHarness.add(nrth, BorderLayout.NORTH);
         testHarness.add(sth, BorderLayout.SOUTH);

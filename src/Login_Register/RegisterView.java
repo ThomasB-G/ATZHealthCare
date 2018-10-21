@@ -7,8 +7,7 @@ package Login_Register;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
+import java.awt.GridLayout;
 import javax.swing.*;
 
 /**
@@ -23,6 +22,14 @@ public class RegisterView extends JFrame {
     private JPanel west;
     private JPanel east;
     private JPanel cntr;
+    private JLabel firstNameLabel;
+    private JLabel lastNameLabel;
+    private JLabel userNameLabel;
+    private JLabel passWordLabel;
+    private JTextField firstNameText = new JTextField(15);
+    private JTextField lastNameText = new JTextField(15);
+    private JTextField userNameText = new JTextField(15);
+    private JTextField passWordText = new JTextField(15);
     
     private JButton nextController;
 
@@ -36,15 +43,29 @@ public class RegisterView extends JFrame {
         sth = new JPanel();
         west = new JPanel();
         east = new JPanel();
-        cntr = new JPanel();
+        cntr = new JPanel(new GridLayout(5, 1));
+        lastNameLabel = new JLabel("Last Name:");
+        firstNameLabel = new JLabel("First Name:");
+        userNameLabel = new JLabel("Username:");
+        passWordLabel = new JLabel("Password:");
         
-        nextController = new JButton("To Documents");
-        nextController.addActionListener(event -> cntl.toDocumentButtonPushed());
-        nrth.setBackground(Color.RED);
+        
+        
+        nextController = new JButton("Register Account");
+        nextController.addActionListener(event -> toHome());
+        nrth.setBackground(Color.BLUE);
         sth.setBackground(Color.BLUE);
-        west.setBackground(Color.GREEN);
-        east.setBackground(Color.CYAN);
-        cntr.setBackground(Color.YELLOW);
+        west.setBackground(Color.BLUE);
+        east.setBackground(Color.BLUE);
+        cntr.setBackground(Color.WHITE);
+        cntr.add(firstNameLabel);
+        cntr.add(firstNameText);
+        cntr.add(lastNameLabel);
+        cntr.add(lastNameText);
+        cntr.add(userNameLabel);
+        cntr.add(userNameText);
+        cntr.add(passWordLabel);
+        cntr.add(passWordText);
         cntr.add(nextController);
         
         this.add(nrth, BorderLayout.NORTH);
@@ -53,6 +74,10 @@ public class RegisterView extends JFrame {
         this.add(west, BorderLayout.WEST);
         this.add(cntr, BorderLayout.CENTER);
         this.setSize(400,300);
+    }
+    
+    private void toHome(){
+        cntl.toHome();
     }
 
     

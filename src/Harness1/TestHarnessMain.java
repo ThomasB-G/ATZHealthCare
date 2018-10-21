@@ -14,10 +14,10 @@ public class TestHarnessMain {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        TestHarness fm = new TestHarness();
-        fm.setVisible(true);
-    }
+//    public static void main(String[] args) {
+//        // TODO code application logic here
+//        TestHarness fm = new TestHarness();
+//        fm.setVisible(true);
+//    }
     
 }

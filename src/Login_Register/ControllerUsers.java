@@ -12,11 +12,13 @@ package Login_Register;
 public class ControllerUsers {
     private LoginView loginView;
     private RegisterView registerView;
+    private HomePage home;
     private ModelUsers model;
 
     public ControllerUsers() {
         this.loginView = new LoginView(this);
         this.registerView = new RegisterView(this);
+        this.home = new HomePage(this);
         this.model = new ModelUsers(this);
         this.loginView.setVisible(true);
     }
@@ -34,5 +36,13 @@ public class ControllerUsers {
         Documents.ControllerDocs nextCntl = new Documents.ControllerDocs();
     }
     
+    public void toLogin(){
+        this.home.dispose();
+        this.loginView.setVisible(true);
+    }
     
+    public void toHome(){
+        this.registerView.dispose();
+        this.home.setVisible(true);
+    }
 }
