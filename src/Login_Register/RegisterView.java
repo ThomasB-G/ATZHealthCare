@@ -30,6 +30,8 @@ public class RegisterView extends JFrame {
     private JTextField lastNameText = new JTextField(15);
     private JTextField userNameText = new JTextField(15);
     private JTextField passWordText = new JTextField(15);
+    private JPanel registerButton;
+    private JPanel cntrButtons;
     
     private JButton nextController;
 
@@ -43,7 +45,9 @@ public class RegisterView extends JFrame {
         sth = new JPanel();
         west = new JPanel();
         east = new JPanel();
-        cntr = new JPanel(new GridLayout(5, 1));
+        registerButton = new JPanel();
+        cntr = new JPanel();
+        cntrButtons = new JPanel(new GridLayout(5, 1));
         lastNameLabel = new JLabel("Last Name:");
         firstNameLabel = new JLabel("First Name:");
         userNameLabel = new JLabel("Username:");
@@ -58,15 +62,21 @@ public class RegisterView extends JFrame {
         west.setBackground(Color.BLUE);
         east.setBackground(Color.BLUE);
         cntr.setBackground(Color.WHITE);
-        cntr.add(firstNameLabel);
-        cntr.add(firstNameText);
-        cntr.add(lastNameLabel);
-        cntr.add(lastNameText);
-        cntr.add(userNameLabel);
-        cntr.add(userNameText);
-        cntr.add(passWordLabel);
-        cntr.add(passWordText);
-        cntr.add(nextController);
+        cntrButtons.setBackground(Color.WHITE);
+        registerButton.setBackground(Color.WHITE);
+        cntrButtons.add(firstNameLabel);
+        cntrButtons.add(firstNameText);
+        cntrButtons.add(lastNameLabel);
+        cntrButtons.add(lastNameText);
+        cntrButtons.add(userNameLabel);
+        cntrButtons.add(userNameText);
+        cntrButtons.add(passWordLabel);
+        cntrButtons.add(passWordText);
+        cntr.add(cntrButtons);
+        registerButton.add(nextController);
+        cntr.add(registerButton);
+        
+        
         
         this.add(nrth, BorderLayout.NORTH);
         this.add(sth, BorderLayout.SOUTH);

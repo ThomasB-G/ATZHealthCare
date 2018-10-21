@@ -28,6 +28,8 @@ public class LoginView extends JFrame {
     private JTextField userName = new JTextField(15);
     private JLabel passWordLabel;
     private JTextField passWord = new JTextField(15);
+    private JPanel cntrButtons;
+    private JPanel loginButton;
 
     public LoginView(ControllerUsers cntl){
         this.cntl = cntl;
@@ -37,23 +39,29 @@ public class LoginView extends JFrame {
         sth = new JPanel();
         west = new JPanel();
         east = new JPanel();
-        cntr = new JPanel(new GridLayout(5, 1));
+        cntr = new JPanel();
+        cntrButtons = new JPanel(new GridLayout(5, 1));
+        loginButton = new JPanel();
         
         userNameLabel = new JLabel("Username:");
         passWordLabel = new JLabel("Password:");
         
-        toRegister = new JButton("Login");
+        toRegister = new JButton("Login to Application");
         toRegister.addActionListener(event -> cntl.toDocumentButtonPushed());
         nrth.setBackground(Color.BLUE);
         sth.setBackground(Color.BLUE);
         west.setBackground(Color.BLUE);
         east.setBackground(Color.BLUE);
         cntr.setBackground(Color.WHITE);
-        cntr.add(userNameLabel);
-        cntr.add(userName);
-        cntr.add(passWordLabel);
-        cntr.add(passWord);
-        cntr.add(toRegister);
+        cntrButtons.setBackground(Color.WHITE);
+        loginButton.setBackground(Color.WHITE);
+        cntrButtons.add(userNameLabel);
+        cntrButtons.add(userName);
+        cntrButtons.add(passWordLabel);
+        cntrButtons.add(passWord);
+        loginButton.add(toRegister);
+        cntr.add(cntrButtons);
+        cntr.add(loginButton);
         
         this.add(nrth, BorderLayout.NORTH);
         this.add(sth, BorderLayout.SOUTH);
