@@ -19,24 +19,27 @@ public class LoginView extends JFrame {
     private JPanel panel;
     private final ControllerUsers cntl;
 
-    private final JPanel nrth;
-    private final JPanel sth;
-    private final JPanel west;
-    private final JPanel east;
-    private final JPanel cntr;
-    private final JButton toRegister;
-    private final JLabel userNameLabel;
+    private JPanel nrth;
+    private JPanel sth;
+    private JPanel west;
+    private JPanel east;
+    private JPanel cntr;
+    private JButton toRegister;
+    private JLabel userNameLabel;
     private final JTextField userName = new JTextField(15);
-    private final JLabel passWordLabel;
-    private final JTextField passWord;
-    private final JPanel cntrButtons;
-    private final JPanel loginButton;
+    private JLabel passWordLabel;
+    private final JTextField passWord = new JTextField(15);
+    private JPanel cntrButtons;
+    private JPanel loginButton;
 
     public LoginView(ControllerUsers cntl){
-        this.passWord = new JTextField(15);
-        this.cntl = cntl;
-        this.setTitle("Login");
         
+        this.cntl = cntl;
+        init_components();
+    }
+    
+    private void init_components(){
+        this.setTitle("Login");
         nrth = new JPanel();
         sth = new JPanel();
         west = new JPanel();
@@ -71,8 +74,6 @@ public class LoginView extends JFrame {
         this.add(west, BorderLayout.WEST);
         this.add(cntr, BorderLayout.CENTER);
         this.setSize(400,300);
-        
-        
     }
     
     private void checkCredentials(String userName, String passWord){
