@@ -13,11 +13,11 @@ import javax.swing.JOptionPane;
  * @author russell
  */
 public class ControllerUsers {
-    private LoginView loginView;
-    private RegisterView registerView;
-    private HomePage home;
-    private ModelUsers model;
-    private ArrayList<User> users;
+    private final LoginView loginView;
+    private final RegisterView registerView;
+    private final HomePage home;
+    private final ModelUsers model;
+    private final ArrayList<User> users;
 
     public ControllerUsers() {
         this.loginView = new LoginView(this);

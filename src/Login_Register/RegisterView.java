@@ -17,37 +17,45 @@ import javax.swing.*;
 public class RegisterView extends JFrame {
     private JPanel panel;
     private final ControllerUsers cntl;
-    private final JPanel nrth;
-    private final JPanel sth;
-    private final JPanel west;
-    private final JPanel east;
-    private final JPanel cntr;
-    private final JLabel firstNameLabel;
-    private final JLabel lastNameLabel;
-    private final JLabel userNameLabel;
-    private final JLabel passWordLabel;
-    private final JLabel addressLabel;
-    private final JLabel genderLabel;
-    private final JLabel phoneNumberLabel;
-    private final JLabel ageLabel;
-    private final JTextField firstNameText = new JTextField(15);
-    private final JTextField lastNameText = new JTextField(15);
-    private final JTextField userNameText = new JTextField(15);
-    private final JTextField passWordText = new JTextField(15);
-    private final JTextField addressText = new JTextField(15);
-    private final JTextField genderText = new JTextField(15);
-    private final JTextField phoneNumberText = new JTextField(15);
-    private final JTextField ageText = new JTextField(15);
-    private final JPanel registerButton;
-    private final JPanel cntrButtons;
-    private final JLabel accountType;
-    private final JComboBox accountTypeSelect;
+    private JPanel nrth;
+    private JPanel sth;
+    private JPanel west;
+    private JPanel east;
+    private JPanel cntr;
+    private JLabel firstNameLabel;
+    private JLabel lastNameLabel;
+    private JLabel userNameLabel;
+    private JLabel passWordLabel;
+    private JLabel addressLabel;
+    private JLabel genderLabel;
+    private JLabel phoneNumberLabel;
+    private JLabel ageLabel;
+    private final JTextField firstNameText = new JTextField(20);
+    private final JTextField lastNameText = new JTextField(20);
+    private final JTextField userNameText = new JTextField(20);
+    private final JTextField passWordText = new JTextField(20);
+    private final JTextField addressText = new JTextField(20);
+    private final JTextField genderText = new JTextField(20);
+    private final JTextField phoneNumberText = new JTextField(20);
+    private final JTextField ageText = new JTextField(20);
+    private JPanel registerButton;
+    private JPanel cntrButtons;
+    private JLabel accountType;
+    private JComboBox accountTypeSelect;
+    private JPanel topPanel;
+    private JLabel instructions;
     
-    private final JButton nextController;
+    private JButton nextController;
 
     public RegisterView(ControllerUsers cntl){
         this.cntl = cntl;
-        this.setSize(400,400);
+        initComponents();
+        
+        
+    }
+    
+    private void initComponents(){
+        this.setSize(600,400);
         
         this.setTitle("Register for an Account");
         
@@ -57,6 +65,7 @@ public class RegisterView extends JFrame {
         east = new JPanel();
         registerButton = new JPanel();
         cntr = new JPanel();
+        topPanel = new JPanel();
         cntrButtons = new JPanel(new GridLayout(9, 1));
         lastNameLabel = new JLabel(" Last Name:");
         firstNameLabel = new JLabel(" First Name:");
@@ -72,6 +81,15 @@ public class RegisterView extends JFrame {
         String[] types = new String[]{"Patient","Doctor","Pharmacist","Hospital Admin"};
         accountTypeSelect = new JComboBox<>(types);
         
+        userNameText.setText("username");
+        passWordText.setText("Passw0rd!");
+        phoneNumberText.setText("(000)-000-0000");
+        genderText.setText("Female");
+        ageText.setText("0");
+        addressText.setText("100 Sunnyvale Blvd, Howard, MD 21029");
+        firstNameText.setText("First Name");
+        lastNameText.setText("Last Name");
+        instructions = new JLabel("Please enter your information in the format shown below.");
         
         
         
@@ -84,6 +102,7 @@ public class RegisterView extends JFrame {
         cntr.setBackground(Color.WHITE);
         cntrButtons.setBackground(Color.WHITE);
         registerButton.setBackground(Color.WHITE);
+        topPanel.setBackground(Color.WHITE);
         cntrButtons.add(firstNameLabel);
         cntrButtons.add(firstNameText);
         cntrButtons.add(lastNameLabel);
@@ -102,11 +121,11 @@ public class RegisterView extends JFrame {
         cntrButtons.add(passWordText);
         cntrButtons.add(accountType);
         cntrButtons.add(accountTypeSelect);
+        topPanel.add(instructions);
+        cntr.add(topPanel);
         cntr.add(cntrButtons);
         registerButton.add(nextController);
         cntr.add(registerButton);
-        
-        
         
         this.add(nrth, BorderLayout.NORTH);
         this.add(sth, BorderLayout.SOUTH);
@@ -117,12 +136,12 @@ public class RegisterView extends JFrame {
     
     private void registerAccount(){
         try{
-            cntl.addUser(firstNameText.getText(), lastNameText.getText(), addressText.getText(), genderText.getText(), userNameText.getText(), passWordText.getText(), phoneNumberText.getText(), Integer.parseInt(ageText.getText()),phoneNumberText.getText());
-           cntl.toHome();
+            cntl.addUser(firstNameText.getText(), lastNameText.getText(), addressText.getText(), genderText.getText(), userNameText.getText(), passWordText.getText(), phoneNumberText.getText(), Integer.parseInt(ageText.getText()),accountTypeSelect.getSelectedItem().toString());
+           JOptionPane.showMessageDialog(null, "User successfully added. Please login to the application.");
+            cntl.toHome();
         }catch(NumberFormatException e){
            JOptionPane.showMessageDialog(null, "invalid/missing age. Please enter age and try again. ");
         }
-        //System.out.println(cntl.getUsers());
         
     }
     
