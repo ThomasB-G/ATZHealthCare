@@ -10,32 +10,44 @@ package Login_Register;
  * @author russell
  */
 public class User {
-    private String name;
+    private String firstName;
+    private String lastName;
     private String address;
     private String gender;
     private String username;
     private String password;
     private String phoneNumber;
     private int age;
+    private String userType;
 
-    public User(String name, String address, String gender, String username, String password, String phoneNumber, int age) {
-        this.name = name;
+    public User(String firstName, String lastName, String address, String gender, String username, String password, String phoneNumber, int age, String userType) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.address = address;
         this.gender = gender;
         this.username = username;
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.age = age;
+        this.userType = userType;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
+    public String getLastName(){
+        return lastName;
+    }
+    
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
+    
     public String getAddress() {
         return address;
     }
@@ -83,11 +95,23 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
+    
+    public String getUserType(){
+        return userType;
+    }
+    
+    public void setUserType(String userType){
+        this.userType=userType;
+    }
 
     @Override
     public String toString() {
-        return "User{" + "name=" + name + ", address=" + address + ", gender=" + gender + ", username=" + username + ", password=" + password + ", phoneNumber=" + phoneNumber + ", age=" + age + '}';
+        return "User{" + "firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", gender=" + gender + ", username=" + username + ", password=" + password + ", phoneNumber=" + phoneNumber + ", age=" + age + ", userType=" + userType + '}';
     }
+
+    
+
+    
     
     
 }

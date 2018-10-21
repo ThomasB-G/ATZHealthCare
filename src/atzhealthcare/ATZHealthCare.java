@@ -6,7 +6,6 @@
 package atzhealthcare;
 
 import Login_Register.ControllerUsers;
-import Login_Register.HomePage;
 
 
 /**
@@ -21,8 +20,7 @@ public class ATZHealthCare {
     public static void main(String[] args) {
         // TODO code application logic here
         ControllerUsers cntl = new ControllerUsers();
-        HomePage fm = new HomePage(cntl);
-        fm.setVisible(true);
+        
     }
     
 }

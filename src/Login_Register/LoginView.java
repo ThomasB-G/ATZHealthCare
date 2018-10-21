@@ -10,28 +10,30 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.*;
 
+
 /**
  *
  * @author russell
  */
 public class LoginView extends JFrame {
     private JPanel panel;
-    private ControllerUsers cntl;
+    private final ControllerUsers cntl;
 
-    private JPanel nrth;
-    private JPanel sth;
-    private JPanel west;
-    private JPanel east;
-    private JPanel cntr;
-    private JButton toRegister;
-    private JLabel userNameLabel;
-    private JTextField userName = new JTextField(15);
-    private JLabel passWordLabel;
-    private JTextField passWord = new JTextField(15);
-    private JPanel cntrButtons;
-    private JPanel loginButton;
+    private final JPanel nrth;
+    private final JPanel sth;
+    private final JPanel west;
+    private final JPanel east;
+    private final JPanel cntr;
+    private final JButton toRegister;
+    private final JLabel userNameLabel;
+    private final JTextField userName = new JTextField(15);
+    private final JLabel passWordLabel;
+    private final JTextField passWord;
+    private final JPanel cntrButtons;
+    private final JPanel loginButton;
 
     public LoginView(ControllerUsers cntl){
+        this.passWord = new JTextField(15);
         this.cntl = cntl;
         this.setTitle("Login");
         
@@ -47,7 +49,7 @@ public class LoginView extends JFrame {
         passWordLabel = new JLabel("Password:");
         
         toRegister = new JButton("Login to Application");
-        toRegister.addActionListener(event -> cntl.toDocumentButtonPushed());
+        toRegister.addActionListener(event -> checkCredentials(userName.getText(),passWord.getText()));
         nrth.setBackground(Color.BLUE);
         sth.setBackground(Color.BLUE);
         west.setBackground(Color.BLUE);
@@ -69,7 +71,14 @@ public class LoginView extends JFrame {
         this.add(west, BorderLayout.WEST);
         this.add(cntr, BorderLayout.CENTER);
         this.setSize(400,300);
+        
+        
     }
+    
+    private void checkCredentials(String userName, String passWord){
+        cntl.checkCredentials(userName,passWord);
+    }
+    
     
     
 }
