@@ -13,7 +13,9 @@ import javax.swing.*;
  *
  * @author russell
  */
-public class InboxView extends JFrame {
+public class InboxView extends JFrame{
+
+    
     private JPanel panel;
     private ControllerCom cntl;
     private JPanel nrth;
@@ -41,6 +43,7 @@ public class InboxView extends JFrame {
         east.setBackground(Color.BLUE);
         cntr.setBackground(Color.WHITE);
         cntr.add(toMessage);
+        cntr.add(new JTextField("This is where you would check your inbox."));
         
         this.add(nrth, BorderLayout.NORTH);
         this.add(sth, BorderLayout.SOUTH);
@@ -50,6 +53,11 @@ public class InboxView extends JFrame {
         this.setSize(400,300);
     }
 
-    
-    
 }
+
+
+
+
+
+
+
