@@ -7,6 +7,7 @@ package Communication;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.util.LinkedList;
 import javax.swing.*;
 
 /**
@@ -29,6 +30,18 @@ public class InboxView extends JFrame{
         this.cntl = cntl;
         this.setTitle("InboxView");
         
+        String[][] data = {{"subject", "recipient"}, {"subject two", "recipient two"}, {"subject three", "recipient three"}, {"subject four", "recipient four"}};
+        
+        String[] columns = {"Subject", "Recipient"};
+        
+        JTable table = new JTable(data, columns);
+        
+        table.setColumnSelectionAllowed(true);
+        
+        table.setColumnSelectionAllowed(true);
+        
+        JScrollPane jp = new JScrollPane(table);
+        
         nrth = new JPanel();
         sth = new JPanel();
         west = new JPanel();
@@ -43,7 +56,7 @@ public class InboxView extends JFrame{
         east.setBackground(Color.BLUE);
         cntr.setBackground(Color.WHITE);
         cntr.add(toMessage);
-        cntr.add(new JTextField("This is where you would check your inbox."));
+        cntr.add(jp);
         
         this.add(nrth, BorderLayout.NORTH);
         this.add(sth, BorderLayout.SOUTH);
