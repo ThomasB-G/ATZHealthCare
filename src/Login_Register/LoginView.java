@@ -19,51 +19,59 @@ public class LoginView extends JFrame {
     private JPanel panel;
     private final ControllerUsers cntl;
 
-    private JPanel nrth;
-    private JPanel sth;
-    private JPanel west;
-    private JPanel east;
-    private JPanel cntr;
-    private JButton toRegister;
-    private JLabel userNameLabel;
-    private final JTextField userName = new JTextField(15);
-    private JLabel passWordLabel;
-    private final JTextField passWord = new JTextField(15);
-    private JPanel cntrButtons;
-    private JPanel loginButton;
+    private final JPanel nrth;
+    private final JPanel sth;
+    private final JPanel west;
+    private final JPanel east;
+    private final JPanel cntr;
+    private final JButton toRegister;
+    private final JLabel userNameLabel;
+    private final JTextField userName;
+    private final JLabel passWordLabel;
+    private final JTextField passWord;
+    private final JPanel cntrButtons;
+    private final JPanel loginButton;
+    private final JButton goBack;
+    
+        
 
     public LoginView(ControllerUsers cntl){
         
         this.cntl = cntl;
-        init_components();
-    }
-    
-    private void init_components(){
-        this.setTitle("Login");
-        nrth = new JPanel();
-        sth = new JPanel();
-        west = new JPanel();
-        east = new JPanel();
-        cntr = new JPanel();
-        cntrButtons = new JPanel(new GridLayout(5, 1));
-        loginButton = new JPanel();
-        
-        userNameLabel = new JLabel("Username:");
-        passWordLabel = new JLabel("Password:");
-        
+        nrth= new JPanel();
+        sth=new JPanel();
+        west=new JPanel();
+        east=new JPanel();
+        cntr=new JPanel();
+        userNameLabel=new JLabel("Username:");
+        userName=new JTextField(15);
+        passWordLabel=new JLabel("Password:");
+        passWord= new JTextField(15);
+        cntrButtons= new JPanel(new GridLayout(5, 1));
         toRegister = new JButton("Login to Application");
         toRegister.addActionListener(event -> checkCredentials(userName.getText(),passWord.getText()));
-        nrth.setBackground(Color.BLUE);
-        sth.setBackground(Color.BLUE);
-        west.setBackground(Color.BLUE);
-        east.setBackground(Color.BLUE);
-        cntr.setBackground(Color.WHITE);
-        cntrButtons.setBackground(Color.WHITE);
-        loginButton.setBackground(Color.WHITE);
+        goBack = new JButton("Go Back");
+        goBack.addActionListener(event -> goBack());
+        loginButton= new JPanel();
+        setView();
+    }
+    
+    private void setView(){
+        this.setTitle("Login");
+       
+        
+        nrth.setBackground(Color.LIGHT_GRAY);
+        sth.setBackground(Color.LIGHT_GRAY);
+        west.setBackground(Color.LIGHT_GRAY);
+        east.setBackground(Color.LIGHT_GRAY);
+        cntr.setBackground(Color.LIGHT_GRAY);
+        cntrButtons.setBackground(Color.LIGHT_GRAY);
+        loginButton.setBackground(Color.LIGHT_GRAY);
         cntrButtons.add(userNameLabel);
         cntrButtons.add(userName);
         cntrButtons.add(passWordLabel);
         cntrButtons.add(passWord);
+        loginButton.add(goBack);
         loginButton.add(toRegister);
         cntr.add(cntrButtons);
         cntr.add(loginButton);
@@ -80,6 +88,10 @@ public class LoginView extends JFrame {
         cntl.checkCredentials(userName,passWord);
     }
     
+    private void goBack(){
+        cntl.toHome();
+    }
+           
     
     
 }

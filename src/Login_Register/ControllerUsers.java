@@ -49,6 +49,7 @@ public class ControllerUsers {
     
     public void toHome(){
         this.registerView.dispose();
+        this.loginView.dispose();
         this.home.setVisible(true);
     }
     
