@@ -26,6 +26,11 @@ public class ControllerDocs {
         
         Communication.ControllerCom nextCntl  = new Communication.ControllerCom();
     }
+        public void moveToPolicy()
+    {
+        this.view.dispose();
+        HealthcarePolicy.ControllerPolicy nextCntl  = new HealthcarePolicy.ControllerPolicy();
+    }
     
     public void addDocument(Document document)
     {

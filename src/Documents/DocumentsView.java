@@ -24,6 +24,7 @@ public class DocumentsView extends JFrame {
     private JPanel east;
     private JPanel cntr;
     private JButton toCommunication;
+    private JButton toPolicy;
 
     public DocumentsView(ControllerDocs cntl){
         this.cntl = cntl;
@@ -38,12 +39,15 @@ public class DocumentsView extends JFrame {
         
         toCommunication = new JButton("To Communication");
         toCommunication.addActionListener(event -> cntl.toCommunicationButtonPressed());
+        toPolicy = new JButton("Policies");
+        toPolicy.addActionListener(event -> cntl.moveToPolicy());
         nrth.setBackground(Color.BLUE);
         sth.setBackground(Color.BLUE);
         west.setBackground(Color.BLUE);
         east.setBackground(Color.BLUE);
         cntr.setBackground(Color.WHITE);
         cntr.add(toCommunication);
+        cntr.add(toPolicy);
         
         this.add(nrth, BorderLayout.NORTH);
         this.add(sth, BorderLayout.SOUTH);
