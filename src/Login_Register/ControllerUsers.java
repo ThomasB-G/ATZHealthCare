@@ -55,11 +55,14 @@ public class ControllerUsers {
     
     public void addUser(String firstName, String lastName, String address, String gender, String username, String password, String phoneNumber, int age, String userType){
         try{
-            users.add(new User(firstName,lastName,address,gender,username,password,phoneNumber,age,userType));
-        }catch(NumberFormatException e){
-           JOptionPane.showMessageDialog(null, "invalid/missing age. Please enter age and try again. ");
+            User toAdd = new User(firstName,lastName,address,gender,username,password,phoneNumber,age,userType);
+            users.add(toAdd);
         }
-        
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "The user could not be created due to one or more invalid fields.");
+            System.out.println(e);
+        }
     }
     
     public ArrayList<User> getUsers(){
