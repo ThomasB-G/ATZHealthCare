@@ -14,11 +14,11 @@ public class Document {
     private File file;
     private String title;
 
-    public Document(String title) {
-        
+    public Document(String title, File file) {
         this.title = title;
+        this.file = file;
     }
-
+    //For the 
     public File getFile() {
         return file;
     }

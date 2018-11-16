@@ -13,11 +13,18 @@ public class Prescription {
     private String prescriptionName;
     private String patient;
     private String Doctor;
-
-    public Prescription(String prescriptionName, String patient, String Doctor) {
+    private String type;
+    private int amount;
+    private int max;
+    
+    public Prescription(String prescriptionName, String patient, String Doctor, String type, int amount, int max) {
         this.prescriptionName = prescriptionName;
         this.patient = patient;
         this.Doctor = Doctor;
+        this.type = type;
+        this.amount = amount;
+        this.max = max;
+        
     }
 
     public String getPrescriptionName() {
@@ -42,6 +49,9 @@ public class Prescription {
 
     public void setDoctor(String Doctor) {
         this.Doctor = Doctor;
+    }
+    private void refillPrescription(){
+        amount = max;
     }
      
     
