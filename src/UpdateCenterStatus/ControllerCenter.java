@@ -14,10 +14,10 @@ import java.util.LinkedList;
 public class ControllerCenter {
     private ModelCenter model;
     private StatusView statusView;
+    private String status = "";
 
     public ControllerCenter(){
         this.statusView = new StatusView(this);
-        
         
         this.statusView.setVisible(true);
     }
@@ -27,9 +27,16 @@ public class ControllerCenter {
         
         HealthcarePolicy.ControllerPolicy nextCntl = new HealthcarePolicy.ControllerPolicy();
     }
-    public LinkedList<Status> getStatuses(){
+     public void toHome(){
+        this.statusView.dispose();
         
-        return model.getStatuses();
+        Documents.ControllerDocs nextCntl = new Documents.ControllerDocs();
+    }
+    public String getStatus(){
+        return status;
+    }
+     public void setStatus(String status){
+        this.status = status;
     }
         public void setStatuses(LinkedList<Status> statuses) {
         model.setStatuses(statuses);
