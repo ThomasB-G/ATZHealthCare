@@ -55,7 +55,7 @@ public class InboxView extends JFrame{
         west.setBackground(Color.BLUE);
         east.setBackground(Color.BLUE);
         cntr.setBackground(Color.WHITE);
-        cntr.add(toMessage);
+        sth.add(toMessage);
         cntr.add(jp);
         
         this.add(nrth, BorderLayout.NORTH);
