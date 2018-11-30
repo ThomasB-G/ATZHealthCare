@@ -28,6 +28,17 @@ public class DoctorView extends JFrame {
     public DoctorView(ControllerRefill cntl){
         this.cntl = cntl;
         this.setTitle("DoctorView");
+        String[][] data = {{"subject one", "recipient"}, {"subject two", "recipient two"}, {"subject three", "recipient three"}, {"subject four", "recipient four"}};
+        
+        String[] columns = {"Subject", "Recipient"};
+        
+        JTable table = new JTable(data, columns);
+        
+        table.setColumnSelectionAllowed(true);
+        
+        table.setColumnSelectionAllowed(true);
+        
+        JScrollPane jp = new JScrollPane(table);
         
         nrth = new JPanel();
         sth = new JPanel();
@@ -42,7 +53,8 @@ public class DoctorView extends JFrame {
         west.setBackground(Color.BLUE);
         east.setBackground(Color.BLUE);
         cntr.setBackground(Color.WHITE);
-        cntr.add(toUpdateCenterStatus);
+        sth.add(toUpdateCenterStatus);
+        cntr.add(jp);
         
         this.add(nrth, BorderLayout.NORTH);
         this.add(sth, BorderLayout.SOUTH);
