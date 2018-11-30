@@ -95,14 +95,14 @@ public class RegisterView extends JFrame {
         
         nextController = new JButton("Register Account");
         nextController.addActionListener(event -> registerAccount());
-        nrth.setBackground(Color.BLUE);
-        sth.setBackground(Color.BLUE);
-        west.setBackground(Color.BLUE);
-        east.setBackground(Color.BLUE);
-        cntr.setBackground(Color.WHITE);
-        cntrButtons.setBackground(Color.WHITE);
-        registerButton.setBackground(Color.WHITE);
-        topPanel.setBackground(Color.WHITE);
+        nrth.setBackground(Color.LIGHT_GRAY);
+        sth.setBackground(Color.LIGHT_GRAY);
+        west.setBackground(Color.LIGHT_GRAY);
+        east.setBackground(Color.LIGHT_GRAY);
+        cntr.setBackground(Color.LIGHT_GRAY);
+        cntrButtons.setBackground(Color.LIGHT_GRAY);
+        registerButton.setBackground(Color.LIGHT_GRAY);
+        topPanel.setBackground(Color.LIGHT_GRAY);
         cntrButtons.add(firstNameLabel);
         cntrButtons.add(firstNameText);
         cntrButtons.add(lastNameLabel);

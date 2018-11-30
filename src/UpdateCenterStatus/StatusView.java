@@ -57,11 +57,11 @@ public class StatusView extends JFrame {
         toExit = new JButton("Return Home");
         toExit.addActionListener(event -> cntl.toHome());
         statusOptions =  new JComboBox(options);
-        nrth.setBackground(Color.BLUE);
-        sth.setBackground(Color.BLUE);
-        west.setBackground(Color.BLUE);
-        east.setBackground(Color.BLUE);
-        cntr.setBackground(Color.WHITE);
+        nrth.setBackground(Color.LIGHT_GRAY);
+        sth.setBackground(Color.LIGHT_GRAY);
+        west.setBackground(Color.LIGHT_GRAY);
+        east.setBackground(Color.LIGHT_GRAY);
+        cntr.setBackground(Color.LIGHT_GRAY);
         cntr.add(currentStatusField);
         cntr.add(statusOptions);
         cntr.add(updateStatus);

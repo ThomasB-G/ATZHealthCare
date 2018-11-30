@@ -37,11 +37,11 @@ public class PharmacistView extends JFrame {
         
         toRegister = new JButton("To Doctor View");
         toRegister.addActionListener(event -> cntl.toDoctorButtonPushed());
-        nrth.setBackground(Color.BLUE);
-        sth.setBackground(Color.BLUE);
-        west.setBackground(Color.BLUE);
-        east.setBackground(Color.BLUE);
-        cntr.setBackground(Color.WHITE);
+        nrth.setBackground(Color.LIGHT_GRAY);
+        sth.setBackground(Color.LIGHT_GRAY);
+        west.setBackground(Color.LIGHT_GRAY);
+        east.setBackground(Color.LIGHT_GRAY);
+        cntr.setBackground(Color.LIGHT_GRAY);
         cntr.add(toRegister);
         
         this.add(nrth, BorderLayout.NORTH);

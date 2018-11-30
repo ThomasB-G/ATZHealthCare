@@ -6,17 +6,16 @@
 package HealthcarePolicy;
 
 import java.io.*;
-import java.util.*;
 /**
  *
  * @author russell
  */
 public class Policy {
     private String policy;
-    private LinkedList<String> description;
+    private String description;
     private File file;
 
-    public Policy(String title, LinkedList<String> description, File file) {
+    public Policy(String title, String description, File file) {
         this.policy = title;
         this.description = description;
         this.file = file;
@@ -31,10 +30,10 @@ public class Policy {
     public void setPolicy(String policy) {
         this.policy = policy;
     }
-    public LinkedList<String> getdescription(){
+    public String getdescription(){
         return description;
     }
-    public void setdescription(LinkedList<String> description){
+    public void setdescription(String description){
         this.description = description;
     }
 
