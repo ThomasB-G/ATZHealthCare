@@ -37,11 +37,11 @@ public class HomePage extends JFrame{
         register = new JButton("Register");
         login.addActionListener(event -> cntl.toLogin());
         register.addActionListener(event -> cntl.toRegisterButtonPushed());
-        nrth.setBackground(Color.BLUE);
-        sth.setBackground(Color.BLUE);
-        west.setBackground(Color.BLUE);
-        east.setBackground(Color.BLUE);
-        cntr.setBackground(Color.WHITE);
+        nrth.setBackground(Color.LIGHT_GRAY);
+        sth.setBackground(Color.LIGHT_GRAY);
+        west.setBackground(Color.LIGHT_GRAY);
+        east.setBackground(Color.LIGHT_GRAY);
+        cntr.setBackground(Color.LIGHT_GRAY);
         cntr.add(welcome);
         cntr.add(login);
         cntr.add(register);

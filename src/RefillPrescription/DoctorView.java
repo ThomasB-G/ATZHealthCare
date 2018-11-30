@@ -48,13 +48,12 @@ public class DoctorView extends JFrame {
         
         toUpdateCenterStatus = new JButton("To UpdateCenterStatus");
         toUpdateCenterStatus.addActionListener(event -> cntl.toCenterStatusButtonPushed());
-        nrth.setBackground(Color.BLUE);
-        sth.setBackground(Color.BLUE);
-        west.setBackground(Color.BLUE);
-        east.setBackground(Color.BLUE);
-        cntr.setBackground(Color.WHITE);
-        sth.add(toUpdateCenterStatus);
-        cntr.add(jp);
+        nrth.setBackground(Color.LIGHT_GRAY);
+        sth.setBackground(Color.LIGHT_GRAY);
+        west.setBackground(Color.LIGHT_GRAY);
+        east.setBackground(Color.LIGHT_GRAY);
+        cntr.setBackground(Color.LIGHT_GRAY);
+        cntr.add(toUpdateCenterStatus);
         
         this.add(nrth, BorderLayout.NORTH);
         this.add(sth, BorderLayout.SOUTH);

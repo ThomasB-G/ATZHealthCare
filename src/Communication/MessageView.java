@@ -38,6 +38,12 @@ public class MessageView extends JFrame {
         
         toRefill = new JButton("To Refill");
         toRefill.addActionListener(event -> cntl.toRefillButtonPushed());
+        nrth.setBackground(Color.LIGHT_GRAY);
+        sth.setBackground(Color.LIGHT_GRAY);
+        west.setBackground(Color.LIGHT_GRAY);
+        east.setBackground(Color.LIGHT_GRAY);
+        cntr.setBackground(Color.LIGHT_GRAY);
+        cntr.add(toRefill);
         nrth.setBackground(Color.blue);
         sth.setBackground(Color.blue);
         west.setBackground(Color.blue);

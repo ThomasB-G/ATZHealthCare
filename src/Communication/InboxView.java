@@ -7,7 +7,6 @@ package Communication;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.util.LinkedList;
 import javax.swing.*;
 
 /**
@@ -50,12 +49,12 @@ public class InboxView extends JFrame{
         
         toMessage = new JButton("To MessageView");
         toMessage.addActionListener(event -> cntl.toMessageButtonPushed());
-        nrth.setBackground(Color.BLUE);
-        sth.setBackground(Color.BLUE);
-        west.setBackground(Color.BLUE);
-        east.setBackground(Color.BLUE);
-        cntr.setBackground(Color.WHITE);
-        sth.add(toMessage);
+        nrth.setBackground(Color.LIGHT_GRAY);
+        sth.setBackground(Color.LIGHT_GRAY);
+        west.setBackground(Color.LIGHT_GRAY);
+        east.setBackground(Color.LIGHT_GRAY);
+        cntr.setBackground(Color.LIGHT_GRAY);
+        cntr.add(toMessage);
         cntr.add(jp);
         
         this.add(nrth, BorderLayout.NORTH);
