@@ -42,4 +42,8 @@ public class ControllerPolicy {
     {
         return this.model.getPolicies();
     }
+    
+    public void viewPolicy(){
+        
+    }
 }

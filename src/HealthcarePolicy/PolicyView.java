@@ -7,7 +7,10 @@ package HealthcarePolicy;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.*;
 
 /**
@@ -44,13 +47,23 @@ public class PolicyView extends JFrame {
         
         toExit = new JButton("Return Home");
         toExit.addActionListener(event -> cntl.toHome());
-        cntr.setLayout(new BoxLayout(cntr, BoxLayout.Y_AXIS));
+        cntr.setLayout(new GridLayout(5,1));
         JLabel policy = new JLabel("Legal information and details regarding healthcare policies will be displayed below");
         JButton policyInfo = new JButton("Click to View Policy");
-        newPolicy = new Policy("hipaa","This is the Health Insurance Portability and Accountability Act of 1996. This policy discusses data privacy and security provisions for safeguarding medical information.",new File("hippa.txt"));
+        File hipaa = new File("hipaa.txt");
+        newPolicy = new Policy("hipaa","This is the Health Insurance Portability and Accountability Act of 1996. This policy discusses data privacy and security provisions for safeguarding medical information.",hipaa);
+         try {
+             FileWriter newWriter = new FileWriter(hipaa);
+         } catch (IOException ex) {
+             System.out.println("File Missing.");
+         }
+        JLabel hipaaInfo = new JLabel(newPolicy.getPolicy());
+        policyInfo.addActionListener(event -> cntl.viewPolicy());
         cntr.add(policy);
-        cntr.add(toExit);
+        cntr.add(hipaaInfo);
         cntr.add(policyInfo);
+        cntr.add(toExit);
+        
         
         
         
