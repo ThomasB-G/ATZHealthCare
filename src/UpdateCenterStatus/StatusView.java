@@ -24,7 +24,12 @@ public class StatusView extends JFrame {
     private JPanel east;
     private JPanel cntr;
     private JButton toPolicy;
-
+    private JLabel currentStatusField;
+    private String status;
+    private JComboBox<String[]> statusOptions;
+    private JButton updateStatus;
+    private JButton toExit;
+    
     public StatusView(ControllerCenter cntl){
     this.cntl = cntl;
         this.setTitle("Status View");
@@ -34,15 +39,35 @@ public class StatusView extends JFrame {
         west = new JPanel();
         east = new JPanel();
         cntr = new JPanel();
+       
+         if(cntl.getStatus().equals("")){
+            status = "Nominal";
+        }else{
+             status = cntl.getStatus();
+         }
+        currentStatusField = new JLabel("Medical Center Outbreak Status: " + status);
         
         toPolicy = new JButton("To Policy");
         toPolicy.addActionListener(event -> cntl.toPolicyButtonPressed());
+        
+        String[] options = {"Nominal","Warning","Outbreak"};
+        updateStatus = new JButton("Update Center Status");
+        updateStatus.addActionListener(event -> updateStatus());
+        
+        toExit = new JButton("Return Home");
+        toExit.addActionListener(event -> cntl.toHome());
+        statusOptions =  new JComboBox(options);
         nrth.setBackground(Color.BLUE);
         sth.setBackground(Color.BLUE);
         west.setBackground(Color.BLUE);
         east.setBackground(Color.BLUE);
         cntr.setBackground(Color.WHITE);
+        cntr.add(currentStatusField);
+        cntr.add(statusOptions);
+        cntr.add(updateStatus);
         cntr.add(toPolicy);
+        cntr.add(toExit);
+        
         
         this.add(nrth, BorderLayout.NORTH);
         this.add(sth, BorderLayout.SOUTH);
@@ -51,6 +76,15 @@ public class StatusView extends JFrame {
         this.add(cntr, BorderLayout.CENTER);
         this.setSize(400,300);
     }
-    
+    private void updateStatus(){
+        cntl.setStatus((String) statusOptions.getSelectedItem());
+        status = cntl.getStatus();
+        
+        this.dispose();
+        currentStatusField.setText("Medical Center Outbreak Status: " + status);
+        this.setVisible(true);
+          
+    }
+
     
 }

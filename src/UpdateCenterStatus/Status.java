@@ -10,7 +10,9 @@ package UpdateCenterStatus;
  * @author russell
  */
 public class Status {
+    //Represents comments that could be entered describing the current status of the medcal center
     private String status;
+    //Represents the actual epidemic level of the medical center
     private int statusLvl;
 
     public Status(String status, int statusLvl) {

@@ -28,6 +28,11 @@ public class ControllerPolicy {
     public void toExitButtonPushed(){
         this.policyView.dispose();
     }
+        public void toHome(){
+        this.policyView.dispose();
+        
+        Documents.ControllerDocs nextCntl = new Documents.ControllerDocs();
+    }
     
     public void addPolicy(Policy newPolicy){
         this.model.addPolicy(newPolicy);

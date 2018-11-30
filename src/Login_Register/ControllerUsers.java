@@ -18,6 +18,7 @@ public class ControllerUsers {
     private final HomePage home;
     private final ModelUsers model;
     private final ArrayList<User> users;
+    private User currentUser;
 
     public ControllerUsers() {
         this.loginView = new LoginView(this);
@@ -35,10 +36,10 @@ public class ControllerUsers {
         this.registerView.setVisible(true);
     }
     
-    public void toDocumentButtonPushed()
+    public void toDocumentButtonPushed(User user)
     {
         this.loginView.dispose();
-        
+        currentUser = user;
         Documents.ControllerDocs nextCntl = new Documents.ControllerDocs();
     }
     
@@ -75,7 +76,7 @@ public class ControllerUsers {
         for(int i=0;i<users.size();i++){
             if(userName.equals(users.get(i).getUsername())){
                 if(passWord.equals(users.get(i).getPassword())){
-                    toDocumentButtonPushed();
+                    toDocumentButtonPushed(users.get(i));
                     usernamefound=true;
                     passwordfound=true;
                     break;
@@ -95,4 +96,5 @@ public class ControllerUsers {
         
         
     }
+    
 }
