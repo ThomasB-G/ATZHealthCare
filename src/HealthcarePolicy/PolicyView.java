@@ -7,10 +7,6 @@ package HealthcarePolicy;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.GridLayout;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import javax.swing.*;
 
 /**
@@ -47,22 +43,34 @@ public class PolicyView extends JFrame {
         
         toExit = new JButton("Return Home");
         toExit.addActionListener(event -> cntl.toHome());
-        cntr.setLayout(new GridLayout(5,1));
-        JLabel policy = new JLabel("Legal information and details regarding healthcare policies will be displayed below");
+        JPanel instructions = new JPanel();
+        JPanel buttons = new JPanel();
+        JPanel goHome = new JPanel();
+        cntr.add(instructions,BorderLayout.NORTH);
+        cntr.add(buttons,BorderLayout.CENTER);
+        cntr.add(goHome,BorderLayout.SOUTH);
+        
+        
+        //cntr.setLayout(new GridLayout(5,1));
+        JLabel policy = new JLabel("Legal information and details regarding healthcare policies:");
+        instructions.add(policy);
+        instructions.setBackground(Color.LIGHT_GRAY);
+        
         JButton policyInfo = new JButton("Click to View Policy");
-        File hipaa = new File("hipaa.txt");
-        newPolicy = new Policy("hipaa","This is the Health Insurance Portability and Accountability Act of 1996. This policy discusses data privacy and security provisions for safeguarding medical information.",hipaa);
-         try {
-             FileWriter newWriter = new FileWriter(hipaa);
-         } catch (IOException ex) {
-             System.out.println("File Missing.");
-         }
+        
+        goHome.add(toExit);
+        goHome.setBackground(Color.LIGHT_GRAY);
+        buttons.setBackground(Color.LIGHT_GRAY);
+        newPolicy = new Policy("hipaa security policy","This is the Health Insurance Portability and Accountability Act of 1996. This policy discusses data privacy and security provisions for safeguarding medical information.","hippa.txt");
+        
         JLabel hipaaInfo = new JLabel(newPolicy.getPolicy());
-        policyInfo.addActionListener(event -> cntl.viewPolicy());
-        cntr.add(policy);
-        cntr.add(hipaaInfo);
-        cntr.add(policyInfo);
-        cntr.add(toExit);
+        buttons.add(hipaaInfo);
+        buttons.add(policyInfo);
+        policyInfo.addActionListener(event -> cntl.viewHipaa());
+        //cntr.add(policy);
+        //cntr.add(hipaaInfo);
+        //cntr.add(policyInfo);
+       // cntr.add(toExit);
         
         
         

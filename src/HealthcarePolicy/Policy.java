@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package HealthcarePolicy;
-
-import java.io.*;
 /**
  *
  * @author russell
@@ -13,12 +11,12 @@ import java.io.*;
 public class Policy {
     private String policy;
     private String description;
-    private File file;
+    private String policyText;
 
-    public Policy(String title, String description, File file) {
+    public Policy(String title, String description, String policyText) {
         this.policy = title;
         this.description = description;
-        this.file = file;
+        this.policyText = policyText;
     }
     public Policy(String policy){
         this.policy = policy;
@@ -38,12 +36,8 @@ public class Policy {
     }
     
 
-    public File getFile() {
-        return file;
-    }
-
-    public void setFile(File file) {
-        this.file = file;
+    public void setPolicyText(String policyText) {
+        this.policyText = policyText;
     }
     
     
