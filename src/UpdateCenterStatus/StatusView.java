@@ -26,7 +26,7 @@ public class StatusView extends JFrame {
     private JButton toPolicy;
     private JLabel currentStatusField;
     private String status;
-    private JComboBox<String[]> statusOptions;
+    JComboBox<String> statusOptions;
     private JButton updateStatus;
     private JButton toExit;
     
@@ -56,7 +56,7 @@ public class StatusView extends JFrame {
         
         toExit = new JButton("Return Home");
         toExit.addActionListener(event -> cntl.toHome());
-        statusOptions =  new JComboBox(options);
+        statusOptions =  new JComboBox<>(options);
         nrth.setBackground(Color.LIGHT_GRAY);
         sth.setBackground(Color.LIGHT_GRAY);
         west.setBackground(Color.LIGHT_GRAY);
@@ -83,6 +83,7 @@ public class StatusView extends JFrame {
         this.dispose();
         currentStatusField.setText("Medical Center Outbreak Status: " + status);
         this.setVisible(true);
+        JOptionPane.showMessageDialog(null,"Outbreak Status Updated.");
           
     }
 

@@ -51,7 +51,6 @@ public class PolicyView extends JFrame {
         cntr.add(goHome,BorderLayout.SOUTH);
         
         
-        //cntr.setLayout(new GridLayout(5,1));
         JLabel policy = new JLabel("Legal information and details regarding healthcare policies:");
         instructions.add(policy);
         instructions.setBackground(Color.LIGHT_GRAY);
@@ -67,10 +66,6 @@ public class PolicyView extends JFrame {
         buttons.add(hipaaInfo);
         buttons.add(policyInfo);
         policyInfo.addActionListener(event -> cntl.viewHipaa());
-        //cntr.add(policy);
-        //cntr.add(hipaaInfo);
-        //cntr.add(policyInfo);
-       // cntr.add(toExit);
         
         
         
