@@ -22,10 +22,13 @@ public class MessageView extends JFrame {
     private JPanel east;
     private JPanel cntr;
     private JButton toRefill;
-
+    private JTextArea textMessage;
     public MessageView(ControllerCom cntl){
         this.cntl = cntl;
         this.setTitle("MessageView");
+        textMessage = new JTextArea("Message - Description ");
+        textMessage.setCaretColor(Color.black);
+        textMessage.setBackground(Color.white);
         
         nrth = new JPanel();
         sth = new JPanel();
@@ -41,6 +44,13 @@ public class MessageView extends JFrame {
         east.setBackground(Color.LIGHT_GRAY);
         cntr.setBackground(Color.LIGHT_GRAY);
         cntr.add(toRefill);
+        nrth.setBackground(Color.blue);
+        sth.setBackground(Color.blue);
+        west.setBackground(Color.blue);
+        east.setBackground(Color.blue);
+        cntr.setBackground(Color.WHITE);
+        sth.add(toRefill);
+        cntr.add(textMessage);
         
         this.add(nrth, BorderLayout.NORTH);
         this.add(sth, BorderLayout.SOUTH);
