@@ -7,6 +7,7 @@ package Communication;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
 import javax.swing.*;
 
 /**
@@ -21,12 +22,15 @@ public class MessageView extends JFrame {
     private JPanel west;
     private JPanel east;
     private JPanel cntr;
-    private JButton toRefill;
-    private JTextArea textMessage;
+    private JButton sendMessage;
+    JTextArea textMessage;
+    private JTextField subjectValue;
+    JTextField recipientValue;
+    private JComboBox importance;
     public MessageView(ControllerCom cntl){
         this.cntl = cntl;
         this.setTitle("MessageView");
-        textMessage = new JTextArea("Message - Description ");
+        textMessage = new JTextArea("");
         textMessage.setCaretColor(Color.black);
         textMessage.setBackground(Color.white);
         
@@ -36,20 +40,34 @@ public class MessageView extends JFrame {
         east = new JPanel();
         cntr = new JPanel();
         
-        toRefill = new JButton("To Refill");
-        toRefill.addActionListener(event -> cntl.toRefillButtonPushed());
+        sendMessage = new JButton("Send Message");
+        sendMessage.addActionListener(event -> cntl.sendMessage());
         nrth.setBackground(Color.LIGHT_GRAY);
         sth.setBackground(Color.LIGHT_GRAY);
         west.setBackground(Color.LIGHT_GRAY);
         east.setBackground(Color.LIGHT_GRAY);
         cntr.setBackground(Color.LIGHT_GRAY);
-        cntr.add(toRefill);
-        nrth.setBackground(Color.blue);
-        sth.setBackground(Color.blue);
-        west.setBackground(Color.blue);
-        east.setBackground(Color.blue);
-        cntr.setBackground(Color.WHITE);
-        sth.add(toRefill);
+        cntr.setLayout(new GridLayout(10,2));
+        String[] importanceValues={"low","medium","high"};
+        JLabel recipientLabel = new JLabel("To: ");
+        recipientValue = new JTextField(20);
+        JLabel subjectLabel = new JLabel("Subject: ");
+        subjectValue = new JTextField(20);
+        JButton goBack = new JButton("Go Back");
+        goBack.addActionListener(event -> cntl.toInbox());
+        sth.add(goBack);
+        sth.add(sendMessage);
+        
+        cntr.add(recipientLabel);
+        cntr.add(recipientValue);
+        cntr.add(subjectLabel);
+        cntr.add(subjectValue);
+        JLabel importanceLabel = new JLabel("Priority: ");
+        importance= new JComboBox<>(importanceValues);
+        cntr.add(importanceLabel);
+        cntr.add(importance);
+        JLabel descriptionLabel = new JLabel("Message Contents:");
+        cntr.add(descriptionLabel);
         cntr.add(textMessage);
         
         this.add(nrth, BorderLayout.NORTH);

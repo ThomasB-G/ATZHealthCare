@@ -40,13 +40,13 @@ public class DocumentsView extends JFrame {
         east = new JPanel();
         cntr = new JPanel();
         
-        toCommunication = new JButton("Communication");
+        toCommunication = new JButton("View Communication");
         toCommunication.addActionListener(event -> cntl.toCommunicationButtonPressed());
-        toPolicy = new JButton("Policies");
+        toPolicy = new JButton("View Policies");
         toPolicy.addActionListener(event -> cntl.moveToPolicy());
-        toStatus = new JButton("Center Status");
+        toStatus = new JButton("View Center Status");
         toStatus.addActionListener(event -> cntl.moveToStatus());
-        toRefill = new JButton("Prescriptions");
+        toRefill = new JButton("Send Prescriptions");
         toRefill.addActionListener(event -> cntl.moveToRefill());
         toExit = new JButton("Exit Application");
         toExit.addActionListener(event -> cntl.toExit());

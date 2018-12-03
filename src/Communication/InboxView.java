@@ -27,11 +27,11 @@ public class InboxView extends JFrame{
 
     public InboxView(ControllerCom cntl){
         this.cntl = cntl;
-        this.setTitle("InboxView");
+        this.setTitle("Inbox");
         
-        String[][] data = {{"subject", "recipient"}, {"subject two", "recipient two"}, {"subject three", "recipient three"}, {"subject four", "recipient four"}};
+        String[][] data = {{"Joe Shoe", "12/1 Appointment","Can we reschedule?"}, {"Holly Bo", "Heart Rate","My resting heart rate is 140. Is that okay?"}, {"Billy Bob", "Follow up","I have some questions about our recent appointment"}};
         
-        String[] columns = {"Subject", "Recipient"};
+        String[] columns = {"Sender", "Subject","Description"};
         
         JTable table = new JTable(data, columns);
         
@@ -47,13 +47,16 @@ public class InboxView extends JFrame{
         east = new JPanel();
         cntr = new JPanel();
         
-        toMessage = new JButton("To MessageView");
+        toMessage = new JButton("Send a Message");
         toMessage.addActionListener(event -> cntl.toMessageButtonPushed());
+        JButton goBack = new JButton("Go Home");
+        goBack.addActionListener(event -> cntl.toHome());
         nrth.setBackground(Color.LIGHT_GRAY);
         sth.setBackground(Color.LIGHT_GRAY);
         west.setBackground(Color.LIGHT_GRAY);
         east.setBackground(Color.LIGHT_GRAY);
         cntr.setBackground(Color.LIGHT_GRAY);
+        cntr.add(goBack);
         cntr.add(toMessage);
         cntr.add(jp);
         
@@ -62,7 +65,7 @@ public class InboxView extends JFrame{
         this.add(east, BorderLayout.EAST);
         this.add(west, BorderLayout.WEST);
         this.add(cntr, BorderLayout.CENTER);
-        this.setSize(400,300);
+        this.setSize(600,400);
     }
 
 }
