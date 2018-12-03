@@ -39,6 +39,8 @@ public class DocumentsView extends JFrame {
         west = new JPanel();
         east = new JPanel();
         cntr = new JPanel();
+        JLabel instructions = new JLabel("Welcome to the ATZHealthcare Application.\nPlease Choose an Option.");
+        nrth.add(instructions);
         
         toCommunication = new JButton("View Communication");
         toCommunication.addActionListener(event -> cntl.toCommunicationButtonPressed());
@@ -69,7 +71,7 @@ public class DocumentsView extends JFrame {
         this.add(east, BorderLayout.EAST);
         this.add(west, BorderLayout.WEST);
         this.add(cntr, BorderLayout.CENTER);
-        this.setSize(400,300);
+        this.setSize(460,300);
     }
 
 

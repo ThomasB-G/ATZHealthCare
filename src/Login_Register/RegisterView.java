@@ -78,7 +78,7 @@ public class RegisterView extends JFrame {
         phoneNumberLabel = new JLabel(" Phone Number:");
         ageLabel = new JLabel(" Age:");
         
-        String[] types = new String[]{"Patient","Doctor","Pharmacist","Hospital Admin"};
+        String[] types = new String[]{"Doctor"};
         accountTypeSelect = new JComboBox<>(types);
         
         userNameText.setText("username");
