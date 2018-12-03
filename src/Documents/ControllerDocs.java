@@ -54,7 +54,6 @@ public class ControllerDocs {
     }
     
     public void toExit(){
-        //this.view.dispose();
         System.exit(0);
     }
 }
