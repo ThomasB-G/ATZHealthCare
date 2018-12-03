@@ -36,6 +36,11 @@ public class ControllerDocs {
         this.view.dispose();
         UpdateCenterStatus.ControllerCenter nextCntl  = new UpdateCenterStatus.ControllerCenter();
     }
+        
+    public void moveToRefill(){
+        this.view.dispose();
+        RefillPrescription.ControllerRefill nextCntl = new RefillPrescription.ControllerRefill();
+    }
     
     public void addDocument(Document document)
     {
@@ -46,5 +51,10 @@ public class ControllerDocs {
     public LinkedList<Document> getDocuments()
     {
         return this.model.getDocuments();
+    }
+    
+    public void toExit(){
+        //this.view.dispose();
+        System.exit(0);
     }
 }

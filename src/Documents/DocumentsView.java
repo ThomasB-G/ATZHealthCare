@@ -26,6 +26,8 @@ public class DocumentsView extends JFrame {
     private JButton toCommunication;
     private JButton toPolicy;
     private JButton toStatus;
+    private JButton toRefill;
+    private JButton toExit;
  
     public DocumentsView(ControllerDocs cntl){
         this.cntl = cntl;
@@ -44,6 +46,11 @@ public class DocumentsView extends JFrame {
         toPolicy.addActionListener(event -> cntl.moveToPolicy());
         toStatus = new JButton("Center Status");
         toStatus.addActionListener(event -> cntl.moveToStatus());
+        toRefill = new JButton("Prescriptions");
+        toRefill.addActionListener(event -> cntl.moveToRefill());
+        toExit = new JButton("Exit Application");
+        toExit.addActionListener(event -> cntl.toExit());
+        
         nrth.setBackground(Color.LIGHT_GRAY);
         sth.setBackground(Color.LIGHT_GRAY);
         west.setBackground(Color.LIGHT_GRAY);
@@ -52,6 +59,8 @@ public class DocumentsView extends JFrame {
         cntr.add(toCommunication);
         cntr.add(toPolicy);
         cntr.add(toStatus);
+        cntr.add(toRefill);
+        cntr.add(toExit);
        
         
         

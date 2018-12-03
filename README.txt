@@ -1,4 +1,4 @@
-﻿Russell:
+Russell:
 Made changes to the adduser method in login/register class to reflect Code Smell Refactoring plans 1 & 2. Additionally added javadoc comments to the class I personally wrote and understand to complete Code Smell Refactoring plan #1.
 
 
@@ -14,4 +14,3 @@ Refactoring plan 8 - added comments to Status.java class to fully explain purpos
 
 Li：
 Refactoring plans 9 & 10 -  Adding comments to the checkCredentials method as to why it is in the ControllerUser.java class and not the ModelUser.java class. Removing the ModelUser.java class until a we need a linked of users.
->>>>>>> 53792a677f1b21bf44803fcc69b14fd5d9d13b58
